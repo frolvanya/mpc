@@ -44,7 +44,8 @@ async fn foreign_chain_policy__should_require_unanimity_for_auto_voting() {
             ForeignChainsConfig::default(), // node 2 — no foreign chains
         ];
     })
-    .await;
+    .await
+    .expect("setup_cluster failed");
 
     // when — wait for 2 partial votes to appear without policy application
     (|| async {

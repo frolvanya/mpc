@@ -20,7 +20,8 @@ async fn test_request_during_resharing() {
             c.triples_to_buffer = 2;
             c.presignatures_to_buffer = 2;
         })
-        .await;
+        .await
+        .expect("setup_cluster failed");
 
     // when
     tracing::info!("beginning resharing to 4 nodes, threshold 4");
